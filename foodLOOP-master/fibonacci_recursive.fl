@@ -1,0 +1,18 @@
+receta nocortable fibonacci(nocortable num):
+  si(num <= 2):
+    num = 1 ;
+  sino:
+    num = fibonacci(num - 2) + fibonacci(num - 1);
+  terminar si
+
+  servir num;
+terminar receta
+
+
+menu recursiveFibonacci:
+
+  ingrediente res : nocortable;
+  res = fibonacci(20);
+  mostrar(res);
+
+terminar menu

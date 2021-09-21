@@ -1,0 +1,19 @@
+menu fibonacci:
+
+  ingrediente i : nocortable = 2 ;
+  ingrediente x : nocortable = 1 ;
+  ingrediente y : nocortable = 1 ;
+  ingrediente aux : nocortable = 0 ;
+
+  mostrar(x);
+  mostrar(y);
+
+  mientras(i < 20):
+    aux = x + y;
+    x = y;
+    y = aux;
+    mostrar(aux);
+    i = i + 1 ;
+  terminar mientras
+
+terminar menu

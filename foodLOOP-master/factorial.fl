@@ -1,0 +1,14 @@
+menu factorial:
+
+  ingrediente n : nocortable = 8 ;
+  ingrediente factorial : nocortable = 1 ;
+  ingrediente i : nocortable = 1 ;
+
+  mientras(i <= n):
+   factorial = factorial * i;
+   i = i + 1 ;
+  terminar mientras
+
+  mostrar(factorial);
+
+terminar menu

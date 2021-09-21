@@ -1,0 +1,60 @@
+platillo Pechuga_Pollo:
+  ingrediente sal : nombre;
+
+  receta proceso tipoSal(nombre tipoSal):
+    sal = tipoSal;
+  terminar receta
+
+  receta nombre getTipoSal():
+    servir sal;
+  terminar receta
+
+terminar platillo
+
+platillo Pechuga_Pollo_Cordon_Bleu << Pechuga_Pollo:
+  ingrediente queso : cortable;
+  ingrediente jamon : nombre;
+
+  receta proceso cocinar(cortable cantQueso, nombre tipoJamon, nombre tipoSal):
+    queso = cantQueso;
+    jamon = tipoJamon;
+    sal = tipoSal;
+  terminar receta
+
+  receta proceso agregarQueso(cortable cantQueso):
+    queso = queso + cantQueso;
+  terminar receta
+
+  receta cortable getCantQueso():
+    servir queso;
+  terminar receta
+
+  receta proceso tipoJamon(nombre tipoJamon):
+    jamon = tipoJamon;
+  terminar receta
+
+  receta nombre getTipoJamon():
+    servir jamon;
+  terminar receta
+
+terminar platillo
+
+menu Kitchen:
+
+  ingrediente restaurante1 : Pechuga_Pollo_Cordon_Bleu;
+  restaurante1.cocinar(2.2, "San Rafael", "De mar del Himalaya");
+  restaurante1.agregarQueso(7.8);
+  restaurante1.tipoJamon("San Rafael 2");
+
+  ingrediente restaurante2 : Pechuga_Pollo_Cordon_Bleu;
+  restaurante2.cocinar(7.0, "Tangamanga", "Normal");
+
+  mostrar(restaurante1.getTipoSal());
+  mostrar(restaurante1.getCantQueso());
+  mostrar(restaurante1.getTipoJamon());
+
+  mostrar(restaurante2.getTipoSal());
+  mostrar(restaurante2.getCantQueso());
+  mostrar(restaurante2.getTipoJamon());
+
+terminar menu

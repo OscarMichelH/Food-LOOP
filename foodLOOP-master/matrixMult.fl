@@ -1,0 +1,53 @@
+menu matrixMultiplication:
+
+  ingrediente mat1 : nocortable[3,3];
+  ingrediente mat2 : nocortable[3,3];
+  ingrediente result : nocortable[3,3];
+  ingrediente i : nocortable = 0 ;
+  ingrediente j : nocortable = 0 ;
+  ingrediente k : nocortable = 0 ;
+
+  mat1[0,0] = 1 ;
+  mat1[0,1] = 2 ;
+  mat1[0,2] = 3 ;
+  mat1[1,0] = 4 ;
+  mat1[1,1] = 5 ;
+  mat1[1,2] = 6 ;
+  mat1[2,0] = 7 ;
+  mat1[2,1] = 8 ;
+  mat1[2,2] = 9 ;
+
+  mat2[0,0] = 1 ;
+  mat2[0,1] = 2 ;
+  mat2[0,2] = 3 ;
+  mat2[1,0] = 4 ;
+  mat2[1,1] = 5 ;
+  mat2[1,2] = 6 ;
+  mat2[2,0] = 7 ;
+  mat2[2,1] = 8 ;
+  mat2[2,2] = 9 ;
+
+  mientras(i < 3):
+    j = 0 ;
+    mientras(j < 3):
+      k = 0 ;
+      result[i,j] = 0 ;
+      mientras(k < 3):
+        result[i,j] = result[i,j] + (mat1[i,k] * mat2[k,j]);
+        k = k + 1 ;
+      terminar mientras
+      j = j + 1 ;
+    terminar mientras
+    i = i + 1 ;
+  terminar mientras
+
+  i = 0 ;
+  mientras(i < 3):
+    j = 0 ;
+    mientras(j < 3):
+      mostrar(result[i,j]);
+      j = j + 1 ;
+    terminar mientras
+    i = i + 1 ;
+  terminar mientras
+terminar menu

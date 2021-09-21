@@ -1,0 +1,23 @@
+receta nocortable factorial(nocortable n):
+
+  ingrediente res : nocortable;
+
+  si(n == 0):
+    res = 1 ;
+  sino:
+    res = n * factorial(n - 1);
+  terminar si
+
+  servir res;
+
+terminar receta
+
+
+menu recursiveFactorial:
+
+  ingrediente x : nocortable;
+
+  x = factorial(8);
+  mostrar(x);
+
+terminar menu
